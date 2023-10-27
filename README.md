@@ -23,14 +23,14 @@ Before you get started with Vite.js, ensure you have the following prerequisites
 
 1. Clone your GitHub repository to your local machine/PC if you haven't already:
 
-   ```shell
+```shell
    git clone https://github.com/akanshbende/CPMS_FinalYear.git
    cd CPMS_FinalYear
-
+```
 
 2. Install all node modules of remote project in your PC (if you haven't already):
 
- ```shell
+```shell
 npm install
 ```
 
