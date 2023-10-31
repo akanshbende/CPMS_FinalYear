@@ -1,6 +1,6 @@
 // import React from "react";
 
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import HomeNavbar from "../Components/HomeNavbar";
 import HomePageNavButton from "../Components/HomePageNavButton";
 // import Paper from "@mui/material/Paper";
@@ -8,6 +8,10 @@ import HomePageNavButton from "../Components/HomePageNavButton";
 // import PiStudentBold from "react-icons/pi";
 import HomePageNavButtonsData from "../Data/HomePageNavButtonsData";
 import MarqueeStrip from "../Components/Marquee/MarqueeStrip";
+import ExtraInfoCard1 from "../Components/HomeExtraInfo/ExtraInfoCard1";
+
+import { extaInfoData1, extaInfoData2 } from "../Data/ExtraInfoData";
+import ExtraInfoCard2 from "../Components/HomeExtraInfo/ExtraInfoCard2";
 function HomePage() {
   return (
     <>
@@ -22,9 +26,13 @@ function HomePage() {
             />
           </div>
           <Stack
-            direction={{ xs: "column", sm: "row" }}
+            direction={{ xs: "column", sm: "column", md: "row" }}
             spacing={3}
-            sx={{ padding: 4, alignItems: "center" }}
+            sx={{
+              padding: 4,
+              alignItems: "center",
+              paddingTop: { xs: "1rem", sm: "1rem", md: "5rem" },
+            }}
           >
             <Box
               sx={{
@@ -82,9 +90,99 @@ function HomePage() {
             </Box>
           </Stack>
         </div>
+        {/* Marqueee */}
         <div className="extra-info-wrapper">
           <MarqueeStrip />
         </div>
+        {/* Extra Info */}
+        <Stack
+          spacing={4}
+          direction={{ xs: "column", sm: "column", md: "row" }}
+          sx={{
+            padding: { md: "3rem" },
+            backgroundColor: "#747fe2",
+          }}
+        >
+          {/* ExtraInfo 1 */}
+          <Stack
+            spacing={3}
+            direction={{ xs: "column", sm: "column", md: "column" }}
+            sx={{
+              padding: { md: "2rem" },
+              backgroundColor: "#d9d9d9",
+              width: { md: "50%" },
+            }}
+          >
+            {/* {console.log(extaInfoData1)} */}
+            {extaInfoData1 &&
+              extaInfoData1.map((data, index) => {
+                return (
+                  <ExtraInfoCard1
+                    key={index}
+                    title={data?.title}
+                    description={data?.description}
+                    link={data?.link}
+                  />
+                );
+              })}
+          </Stack>
+          {/* Extra Info 2 */}
+          <Stack
+            spacing={4}
+            direction={{ xs: "column", sm: "column", md: "column" }}
+            sx={{
+              padding: { md: "2rem" },
+              width: { md: "50%" },
+              backgroundColor: "#d9d9d9",
+            }}
+          >
+            {extaInfoData2 &&
+              extaInfoData2.map((data, index) => {
+                return (
+                  <ExtraInfoCard2
+                    key={index}
+                    from={data?.from}
+                    to={data?.to}
+                    link={data?.link}
+                  />
+                );
+              })}
+          </Stack>
+        </Stack>
+
+        {/* Why GECA */}
+
+        <Stack
+          sx={{
+            padding: { md: "4rem" },
+            alignItems: "center",
+            backgroundColor: "#d9d9d9",
+          }}
+        >
+          <Typography variant="h4" sx={{ fontWeight: 700 }}>
+            WHY GECA
+          </Typography>
+          <Typography variant="h6" sx={{ fontWeight: 300 }}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil esse
+            quidem, et, accusamus molestias pariatur recusandae dolores
+            reiciendis eveniet reprehenderit optio dolor, odio velit animi
+            adipisci. Neque repellendus aliquam natus!
+          </Typography>
+          {/* Why geca cards */}
+          <Stack
+            direction={{ md: "row", sm: "column" }}
+            sx={{ alignItems: "center", justifyContent: "space-around" }}
+          >
+            <Paper sx={{}}>
+              <Typography variant="h4" sx={{ fontWeight: 700 }}>
+                ICON
+              </Typography>
+              <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                Alumni
+              </Typography>
+            </Paper>
+          </Stack>
+        </Stack>
       </div>
     </>
   );

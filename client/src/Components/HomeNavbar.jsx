@@ -20,7 +20,7 @@ function HomeNavbar() {
           fontSize: "1.5rem",
         }}
       >
-        <AppBar position="static" sx={{ backgroundColor: "#7091F5" }}>
+        <AppBar position="static" sx={{ backgroundColor: "#747fe2" }}>
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               <img
