@@ -3,9 +3,7 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
 import HomeNavbar from "../Components/HomeNavbar";
 import HomePageNavButton from "../Components/HomePageNavButton";
-// import Paper from "@mui/material/Paper";
 
-// import PiStudentBold from "react-icons/pi";
 import HomePageNavButtonsData from "../Data/HomePageNavButtonsData";
 import MarqueeStrip from "../Components/Marquee/MarqueeStrip";
 import ExtraInfoCard1 from "../Components/HomeExtraInfo/ExtraInfoCard1";
