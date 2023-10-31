@@ -7,6 +7,7 @@ import HomePageNavButton from "../Components/HomePageNavButton";
 
 // import PiStudentBold from "react-icons/pi";
 import HomePageNavButtonsData from "../Data/HomePageNavButtonsData";
+import MarqueeStrip from "../Components/Marquee/MarqueeStrip";
 function HomePage() {
   return (
     <>
@@ -82,7 +83,7 @@ function HomePage() {
           </Stack>
         </div>
         <div className="extra-info-wrapper">
-          <Typography variant="h3">Extras things to added....</Typography>
+          <MarqueeStrip />
         </div>
       </div>
     </>
