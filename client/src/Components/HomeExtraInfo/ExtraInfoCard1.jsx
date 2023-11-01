@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 
 export default function ExtraInfoCard1({ title, description, link }) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275, paddingLeft: "1rem" }}>
       <CardContent>
         {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day

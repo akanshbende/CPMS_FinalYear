@@ -1,6 +1,6 @@
 // import React from "react";
 
-import { Box, Paper, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import HomeNavbar from "../Components/HomeNavbar";
 import HomePageNavButton from "../Components/HomePageNavButton";
 
@@ -8,8 +8,21 @@ import HomePageNavButtonsData from "../Data/HomePageNavButtonsData";
 import MarqueeStrip from "../Components/Marquee/MarqueeStrip";
 import ExtraInfoCard1 from "../Components/HomeExtraInfo/ExtraInfoCard1";
 
-import { extaInfoData1, extaInfoData2 } from "../Data/ExtraInfoData";
+import {
+  extaInfoData1,
+  extaInfoData2,
+  extaInfoData3,
+  extaInfoData4,
+} from "../Data/ExtraInfoData";
 import ExtraInfoCard2 from "../Components/HomeExtraInfo/ExtraInfoCard2";
+import WhyGecaCard from "../Components/HomeExtraInfo/WhyGecaCard";
+import { LiaAtomSolid } from "react-icons/lia";
+import { FaRegStar } from "react-icons/fa6";
+import { GrCycle } from "react-icons/gr";
+import { BiBriefcase } from "react-icons/bi";
+import RecuritmentProcessCard from "../Components/HomeExtraInfo/RecuritmentProcessCard";
+import ContactUs from "../Components/HomeExtraInfo/ContactUs";
+
 function HomePage() {
   return (
     <>
@@ -18,7 +31,7 @@ function HomePage() {
         <div className="homepage-img-wrapper relative w-full ">
           <div className="bg-img absolute -z-10 w-full h-full">
             <img
-              src="/GECA_img1.jpeg "
+              src="/geca1.jpg"
               className="object-cover w-full h-full"
               alt=""
             />
@@ -109,6 +122,8 @@ function HomePage() {
               padding: { md: "2rem" },
               backgroundColor: "#d9d9d9",
               width: { md: "50%" },
+              borderRadius: "10px",
+              boxShadow: "2px 5px 20px rgba(0,0,0,0.5)",
             }}
           >
             {/* {console.log(extaInfoData1)} */}
@@ -132,6 +147,8 @@ function HomePage() {
               padding: { md: "2rem" },
               width: { md: "50%" },
               backgroundColor: "#d9d9d9",
+              borderRadius: "10px",
+              boxShadow: "2px 5px 20px rgba(0,0,0,0.5)",
             }}
           >
             {extaInfoData2 &&
@@ -147,9 +164,7 @@ function HomePage() {
               })}
           </Stack>
         </Stack>
-
         {/* Why GECA */}
-
         <Stack
           sx={{
             padding: { md: "4rem" },
@@ -168,19 +183,75 @@ function HomePage() {
           </Typography>
           {/* Why geca cards */}
           <Stack
+            spacing={3}
             direction={{ md: "row", sm: "column" }}
-            sx={{ alignItems: "center", justifyContent: "space-around" }}
+            sx={{
+              alignItems: "center",
+              justifyContent: "space-between",
+              margin: { md: "2rem" },
+              padding: "2rem 0",
+              width: "100%",
+            }}
           >
-            <Paper sx={{}}>
-              <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                ICON
-              </Typography>
-              <Typography variant="h6" sx={{ fontWeight: 500 }}>
-                Alumni
-              </Typography>
-            </Paper>
+            <WhyGecaCard icon={<LiaAtomSolid />} name={"Alumni"} />
+            <WhyGecaCard icon={<FaRegStar />} name={"Ranking"} />
+            <WhyGecaCard icon={<GrCycle />} name={"Admission Process"} />
+            <WhyGecaCard
+              icon={<BiBriefcase />}
+              name={"All round Development"}
+            />
           </Stack>
         </Stack>
+        {/* Recruitment Process */}
+
+        <Stack
+          spacing={4}
+          direction={{ xs: "column", sm: "column", md: "column" }}
+          sx={{
+            padding: { md: "3rem" },
+            backgroundColor: "#747fe2",
+            textAlign: "center",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant="h3" sx={{ fontWeight: 700 }}>
+            Recruitment Process
+          </Typography>
+          <Typography variant="h5" sx={{ fontWeight: 700 }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+            temporibus voluptatum neque maxime a repellendus consequuntur
+            ratione. Fugit consequuntur quas nobis, voluptatem dicta et vitae
+            soluta. Vero debitis ipsa animi.
+          </Typography>
+          <Stack
+            direction="row"
+            sx={{
+              width: "100%",
+              backgroundColor: "#d9d9d9",
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+              padding: "2rem",
+              borderRadius: "10px",
+              boxShadow: "2px 5px 20px rgba(0,0,0,0.5)",
+            }}
+          >
+            {extaInfoData4 &&
+              extaInfoData4.map((item, index) => {
+                return (
+                  <RecuritmentProcessCard
+                    key={index}
+                    number={index + 1}
+                    description={item?.description}
+                  />
+                );
+              })}
+          </Stack>
+        </Stack>
+
+        {/* Contect US */}
+        <ContactUs />
       </div>
     </>
   );

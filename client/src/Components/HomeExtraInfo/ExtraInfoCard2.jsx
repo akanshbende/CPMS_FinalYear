@@ -12,7 +12,7 @@ import { IconButton, Stack } from "@mui/material";
 function ExtraInfoCard2({ from, to, link }) {
   return (
     <>
-      <Card sx={{ minWidth: 275, cursor: "pointer" }}>
+      <Card sx={{ minWidth: 275, cursor: "pointer", padding: "2rem 0" }}>
         <a href={link} target="_blank" rel="noreferrer">
           <Stack
             direction="row"
