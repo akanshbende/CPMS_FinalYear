@@ -36,19 +36,22 @@ function HomePage() {
               alt=""
             />
           </div>
+          {/* main horizontal stack */}
           <Stack
             direction={{ xs: "column", sm: "column", md: "row" }}
+            width="100%"
             spacing={3}
             sx={{
-              padding: 4,
+              padding: { md: 4, xs: 1, sm: 2 },
               alignItems: "center",
               paddingTop: { xs: "1rem", sm: "1rem", md: "5rem" },
             }}
           >
+            {/* left blur black box */}
             <Box
               sx={{
                 backgroundColor: "rgba(0, 0, 20, 0.6)",
-                width: "60%",
+                width: { md: "60%", sm: "100%", xs: "100%" },
                 padding: 2,
                 borderRadius: 5,
                 backdropFilter: "blur(5px)",
@@ -75,7 +78,7 @@ function HomePage() {
             </Box>
             <Box
               sx={{
-                width: "40%",
+                width: { md: "40%" },
                 padding: 5,
                 alignItems: "center",
                 justifyContent: "center",
@@ -110,7 +113,7 @@ function HomePage() {
           spacing={4}
           direction={{ xs: "column", sm: "column", md: "row" }}
           sx={{
-            padding: { md: "3rem" },
+            padding: { md: "3rem", xs: "1rem", sm: "1.5rem" },
             backgroundColor: "#747fe2",
           }}
         >
@@ -119,7 +122,7 @@ function HomePage() {
             spacing={3}
             direction={{ xs: "column", sm: "column", md: "column" }}
             sx={{
-              padding: { md: "2rem" },
+              padding: { md: "2rem", xs: "1rem", sm: "1.5rem" },
               backgroundColor: "#d9d9d9",
               width: { md: "50%" },
               borderRadius: "10px",
@@ -144,7 +147,7 @@ function HomePage() {
             spacing={4}
             direction={{ xs: "column", sm: "column", md: "column" }}
             sx={{
-              padding: { md: "2rem" },
+              padding: { md: "2rem", xs: "1rem", sm: "1.5rem" },
               width: { md: "50%" },
               backgroundColor: "#d9d9d9",
               borderRadius: "10px",
@@ -167,7 +170,7 @@ function HomePage() {
         {/* Why GECA */}
         <Stack
           sx={{
-            padding: { md: "4rem" },
+            padding: { md: "4rem", xs: "2rem" },
             alignItems: "center",
             backgroundColor: "#d9d9d9",
           }}
@@ -175,7 +178,7 @@ function HomePage() {
           <Typography variant="h4" sx={{ fontWeight: 700 }}>
             WHY GECA
           </Typography>
-          <Typography variant="h6" sx={{ fontWeight: 300 }}>
+          <Typography variant="h6" m={2} sx={{ fontWeight: 300 }}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil esse
             quidem, et, accusamus molestias pariatur recusandae dolores
             reiciendis eveniet reprehenderit optio dolor, odio velit animi
@@ -183,14 +186,20 @@ function HomePage() {
           </Typography>
           {/* Why geca cards */}
           <Stack
-            spacing={3}
-            direction={{ md: "row", sm: "column" }}
+            spacing={0}
+            direction="row"
             sx={{
               alignItems: "center",
-              justifyContent: "space-between",
-              margin: { md: "2rem" },
-              padding: "2rem 0",
+              flexWrap: "wrap",
+              justifyContent: {
+                md: "space-between",
+                xs: "center",
+                sm: "center",
+              },
+              margin: { md: "2rem", xs: "1rem" },
+              padding: { md: "2rem 0", xs: "1rem" },
               width: "100%",
+              gap: { xs: 4 },
             }}
           >
             <WhyGecaCard icon={<LiaAtomSolid />} name={"Alumni"} />
@@ -208,7 +217,7 @@ function HomePage() {
           spacing={4}
           direction={{ xs: "column", sm: "column", md: "column" }}
           sx={{
-            padding: { md: "3rem" },
+            padding: { md: "3rem", xs: "1rem", sm: "2rem" },
             backgroundColor: "#747fe2",
             textAlign: "center",
             alignItems: "center",
@@ -231,6 +240,7 @@ function HomePage() {
               backgroundColor: "#d9d9d9",
               display: "flex",
               alignItems: "center",
+              justifyContent: { md: "normal", xs: "center", sm: "center" },
               flexWrap: "wrap",
               padding: "2rem",
               borderRadius: "10px",

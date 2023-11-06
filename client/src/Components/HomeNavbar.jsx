@@ -21,8 +21,22 @@ function HomeNavbar() {
         }}
       >
         <AppBar position="static" sx={{ backgroundColor: "#747fe2" }}>
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+          <Toolbar
+            sx={{
+              display: "flex",
+              justifyContent: { md: "space-between", xs: "center" },
+              alignItems: "center",
+              flexDirection: { md: "row", xs: "column" },
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <img
                 src="https://geca.ac.in/images/logocsn.png"
                 className="rounded-full w-1/12"
@@ -33,12 +47,14 @@ function HomeNavbar() {
             <Box>
               <Stack
                 spacing={2.5}
-                direction="row"
-                // sx={{
-                //   fontFamily: "Roboto",
-                //   fontWeight: 500,
-                //   fontSize: "1.5rem",
-                // }}
+                direction={{ md: "row", xs: "row" }}
+                sx={{
+                  flexWrap: "wrap",
+                  // fontFamily: "Roboto",
+                  // fontWeight: 500,
+                  // fontSize: "1.5rem",
+                  marginTop: { xs: "1rem" },
+                }}
               >
                 <Box>
                   <Typography> Overview</Typography>
